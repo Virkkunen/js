@@ -1,5 +1,6 @@
 :root {
-  --primary-color: #fbf1c7;
+  --primary-color: #fbf1c7e1;
+  --secondary-color: #3c3836e1;
   --bg: #1d2021;
   --bg0: #282828;
   --bg1: #3c3836;
@@ -47,6 +48,10 @@ p {
 a {
   color: var(--primary-color);
   text-decoration: none;
+}
+
+.dark {
+  color: var(--secondary-color);
 }
 
 .noselect {
