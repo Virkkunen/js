@@ -1,0 +1,81 @@
+:root {
+  --primary-color: #fbf1c7;
+  --bg: #1d2021;
+  --bg0: #282828;
+  --bg1: #3c3836;
+
+  --red: #fb4934;
+  --green: #b8bb26;
+  --yellow: #fabd2f;
+  --blue: #83a598;
+  --darkBlue: #458588;
+  --darkerBlue: #076678;
+  --purple: #d3869b;
+  --aqua: #8ec07c;
+  --orange: #fe8019;
+}
+
+* {
+  box-sizing: border-box;
+  transition-property: all;
+  transition-duration: 0.6s;
+  transition-timing-function: ease;
+}
+
+body {
+  background: var(--bg);
+  font-family: "Fira Code", monospace;
+  color: var(--primary-color);
+  margin: 60px auto;
+  padding: 20px;
+  max-width: 768px;
+  align-items: left;
+  justify-content: left;
+}
+
+h1 {
+  font-weight: 700;
+  font-size: 2em;
+  line-height: 1.5em;
+}
+p {
+  font-weight: 400;
+  font-size: 1.6em;
+  line-height: 1.5em;
+}
+
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+.noselect {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+button {
+  width: 150px;
+  height: 50px;
+  cursor: pointer;
+  font-size: 20px;
+  font-weight: bold;
+  color: var(--primary-color);
+  border: 2px solid var(--bg0);
+  box-shadow: 5px 5px 0 var(--bg1), -5px -5px 0 var(--bg1),
+    -5px 5px 0 var(--bg1), 5px -5px 0 var(--bg1);
+  transition: 500ms ease-in-out;
+}
+
+button:hover {
+  box-shadow: 20px 5px 0 var(--bg1), -20px -5px 0 var(--bg1);
+}
+
+button:focus {
+  outline: none;
+}
