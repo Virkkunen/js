@@ -1,0 +1,109 @@
+:root {
+    --primary-color: #fbf1c7;
+    --bg: #1d2021;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --bg3: #665c54;
+    --bg4: #7c6f64;
+    --red: #cc241d;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Fira Code', monospace;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+p {
+    font-weight: 400;
+    font-size: 1em;
+    line-height: 1.1em;
+}
+
+.container {
+    max-width: 768px;
+    margin: 60px auto;
+    padding: 20px;
+    background: var(--bg1);
+    border-radius: 8px;
+}
+
+.row {
+    display: flex;
+}
+
+.column {
+    flex: 50%;
+}
+
+.p-resultado {
+    border: none;
+    background-color: var(--bg3);
+    font-size: 18px;
+    color: var(--primary-color);
+    height: 50px;
+    margin-top: 30px;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+.p-invalido {
+    border: none;
+    background-color: var(--red);
+    font-size: 18px;
+    color: var(--primary-color);
+    height: 50px;
+    margin-top: 30px;
+    padding: 15px 20px;
+    border-radius: 8px;
+}
+
+form input, form label, form button {
+    display: block;
+    width: 100%;
+    margin-bottom: 10px;
+}
+
+form input {
+    font-size: 24px;
+    height: 50px;
+    padding: 0 20px;
+    border-radius: 8px;
+}
+
+form input:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+
+form button {
+    border: none;
+    background-color: var(--bg3);
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--primary-color);
+    height: 50px;
+    cursor: pointer;
+    margin-top: 30px;
+    border-radius: 8px;
+}
+
+form button:hover {
+    background-color: var(--bg4);
+}
+
+form button:active {
+    background-color: var(--bg2);
+}
