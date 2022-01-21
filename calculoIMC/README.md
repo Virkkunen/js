@@ -1,1 +1,1 @@
-![preview](calculoIMC/assets/img/preview.png)
+![preview](assets/img/preview.png)
