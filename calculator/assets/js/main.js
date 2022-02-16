@@ -1,79 +1,50 @@
-// factory para treinar
+// factory -> constructor
 
-function createCalc() {
-  return {
-    display: document.querySelector(`.display`),
-    btnClear: document.querySelector(".btn-clear"),
+function Calculator() {
+  this.display = document.querySelector(`.display`);
 
-    start() {
-      this.clickButtons();
-      this.pressEnter();
-    },
+  this.start = () => {
+    this.getClicks();
+    this.getEnter();
+  };
 
-    pressEnter() {
-      this.display.addEventListener('keyup', e => {
-        if (e.keyCode === 13) {
-          this.calculate();
-        }
-      });
-    },
+  this.getClicks = () => {
+    document.addEventListener("click", (e) => {
+      const el = e.target;
+      if (el.classList.contains(`btn-num`)) this.addNumberDisplay(el);
+      if (el.classList.contains(`btn-clear`)) this.clear();
+      if (el.classList.contains(`btn-del`)) this.del();
+      if (el.classList.contains(`btn-eq`)) this.equals();
+    });
+  };
 
-    clearDisplay() {
-      this.display.value = "";
-    },
+  this.getEnter = () =>
+    document.addEventListener(`keypress`, (e) => {
+      if (e.keycode === 13) this.equals();
+    });
 
-    backspace() {
-      this.display.value = this.display.value.slice(0, -1);
-    },
+  this.addNumberDisplay = (el) => {
+    this.display.value += el.innerText;
+    this.display.focus();
+  };
+  this.clear = () => (this.display.value = ``);
+  this.del = () => (this.display.value = this.display.value.slice(0, -1));
 
-    calculate() {
-      let calc = this.display.value;
+  this.equals = () => {
+    try {
+      const result = eval(this.display.value);
 
-      try {
-        calc = eval(calc);
-
-        if (!calc) {
-          alert("Invalid values");
-          return;
-        }
-
-        this.display.value = String(calc);
-      } catch (e) {
-        alert("Invalid values");
+      if (!result) {
+        alert("Invalid calculation");
         return;
       }
-    },
 
-    clickButtons() {
-      // this = calculator
-      document.addEventListener("click", (e) => {
-        // mesma coisa que function.bind(this) (this = calculator)
-        const el = e.target;
-
-        if (el.classList.contains("btn-num")) {
-          // this = document
-          this.btnToDisplay(el.innerText);
-        }
-
-        if (el.classList.contains("btn-clear")) {
-          this.clearDisplay();
-        }
-
-        if (el.classList.contains("btn-del")) {
-          this.backspace();
-        }
-
-        if (el.classList.contains("btn-eq")) {
-          this.calculate();
-        }
-      });
-    },
-
-    btnToDisplay(value) {
-      this.display.value += value;
-    },
+      this.display.value = result;
+    } catch (e) {
+      alert(`Invalid`);
+    }
   };
 }
 
-const calculator = createCalc();
+const calculator = new Calculator();
 calculator.start();
