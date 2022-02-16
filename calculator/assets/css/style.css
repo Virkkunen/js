@@ -1,0 +1,112 @@
+:root {
+    --primary-color: #fbf1c7;
+    --secondary-color: #ebdbb2;
+    --bg: #1d2021;
+    --bg1: #3c3836;
+    --bg2: #504945;
+    --bg3: #665c54;
+    --bg4: #7c6f64;
+
+    --blue: #83a598;
+    --green: #98971a;
+}
+
+* {
+    box-sizing: border-box;
+    outline: 0;
+}
+
+body {
+    background: var(--bg);
+    font-family: 'Fira Code', monospace;
+    color: var(--primary-color);
+    margin: 0;
+    padding: 0;
+}
+
+h1 {
+    font-weight: 700;
+    font-size: 2em;
+    line-height: 1.5em;
+}
+
+.container {
+    max-width: 768px;
+    margin: 60px auto;
+    padding: 20px;
+    background: var(--bg1);
+    border-radius: 8px;
+}
+
+input, button {
+    display: block;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    font-size: 1.6em;
+    border: none;
+
+
+}
+
+.display {
+    height: 50px;
+    width: 94.5%;
+    text-align: right;
+    padding: 10px;
+    background-color: var(--bg4);
+    color: var(--primary-color);
+}
+
+.display:focus {
+    outline: 1px solid var(--primary-color);
+}
+
+button {
+    width: 80%;
+    background-color: var(--bg3);
+    font-weight: bold;
+    color: var(--primary-color);
+    height: 60px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: var(--bg4);
+}
+
+button:active {
+    background-color: var(--bg2);
+}
+
+.btn-darker {
+    background-color: var(--bg2);
+}
+
+.btn-eq {
+    background-color: var(--green);
+    color: var(--bg1);
+}
+
+.btn-eq:hover {
+    background-color: #b8bb26;
+}
+
+.btn-eq:active {
+    background-color: #79740e;
+}
+
+.btn-clear, .btn-del {
+    background-color: #cc241d;
+}
+
+.btn-clear:hover, .btn-del:hover {
+    background-color: #fb4934;
+}
+
+.btn-clear:active, .btn-del:active {
+    background-color: #9d0006;
+}
+
+.calculator {
+    width: 100%;
+}
